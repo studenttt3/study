@@ -71,7 +71,7 @@ gen = st.selectbox(
     ('men','women'))
 if(the_most == 'the highest' and gen == 'men'):
     fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
-    ax.vlines(x=df_1['Country Name'], ymin =0, ymax =  color='blue', alpha=0.7, linewidth=2)
+    ax.vlines(x=df_1['Country Name'], ymin =0, color='blue', alpha=0.7, linewidth=2)
     ax.scatter(x=df_1['Country Name'], y=df_1['Male Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
 
