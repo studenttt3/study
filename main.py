@@ -85,8 +85,8 @@ data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
 mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
 for lat , lon in zip(data.latitude , data.longitude): 
         folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
-st_data_0 = st_folium(mapit, width = 725)
-st_data_0
+st_data_1 = st_folium(mapit, width = 725)
+st_data_1
 
 st.header("The country with the lowest growth of women on the map")    
 loc = 'Guatemala'
@@ -96,8 +96,8 @@ data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
 mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
 for lat , lon in zip(data.latitude , data.longitude): 
         folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
-st_data = st_folium(mapit, width = 725)
-st_data
+st_data_2 = st_folium(mapit, width = 725)
+st_data_2
 
 
 
