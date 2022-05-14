@@ -91,11 +91,11 @@ st_data_3
 
 
 st.markdown("Now let's take the height, weight and body mass index data of 500 random people from the US")
-fig, ax = plt.subplots(figsize=(30,40), dpi= 80)
+fig, ax = plt.subplots(figsize=(30,50), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=50)
 plt.xticks(fontsize=30)
-plt.yticks(fontsize=50)
+plt.yticks(fontsize=20)
 ax.set_xlabel("Height", fontsize=40)
 ax.set_ylabel("Weight", fontsize=40)
 st.pyplot(fig)
