@@ -80,5 +80,6 @@ folium.Marker(
     location=[59.94, 30.35],
     popup='<i>Здесь был Вася</i>',
     tooltip='Метка 1').add_to(m2) # попробуйте добавить: icon=folium.Icon(icon="cloud")
+    icon=folium.Icon(icon="cloud")
 
 
