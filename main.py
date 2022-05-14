@@ -77,7 +77,7 @@ folium.Choropleth(
         name="choropleth",
         data=df_1,
         columns=["Male Height in Cm", "Country Name"],
-        key_on="feature.properties.WB_A2",
+        key_on="ADMIN",
         fill_color="YlGn",
         fill_opacity=0.7,
         nan_fill_opacity = 0,
