@@ -59,35 +59,35 @@ st.header("The country with the largest growth of men on the map")
 loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
-data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+df= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
 mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
-for lat , lon in zip(data.latitude , data.longitude): 
+for lat , lon in zip(df.latitude , df.longitude): 
         folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
-st_data_0 = st_folium(mapit, width = 725)
-st_data_0
+ans = st_folium(mapit, width = 725)
+ans
 
 st.header("The country with the lowest growth of men on the map")    
 loc = 'Timor-Leste'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
-data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+df= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
 mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
-for lat , lon in zip(data.latitude , data.longitude): 
+for lat , lon in zip(df.latitude , df.longitude): 
         folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
-st_data_1 = st_folium(mapit, width = 725)
-st_data_1
+ans = st_folium(mapit, width = 725)
+ans
 
 
 st.header("The country with the lowest growth of women on the map")    
 loc = 'Guatemala'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
-data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+df= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
 mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
-for lat , lon in zip(data.latitude , data.longitude): 
+for lat , lon in zip(df.latitude , df.longitude): 
         folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
-st_data_3 = st_folium(mapit, width = 725)
-st_data_3
+ans = st_folium(mapit, width = 725)
+ans
 
 
 st.markdown("Now let's take the height, weight and body mass index data of 500 random people from the US")
