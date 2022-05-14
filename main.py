@@ -73,7 +73,7 @@ m = folium.Map(location = [0,0], zoom_start = 3)
 folium.Choropleth(
         geo_data=geo,
         name="choropleth",
-        data=df_lands_selection,
+        data=df_1,
         columns=["Male Height in Cm", "Country Name"],
         key_on="feature.properties.WB_A2",
         fill_color="YlGn",
