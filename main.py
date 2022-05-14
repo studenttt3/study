@@ -90,10 +90,15 @@ st_data_3 = st_folium(mapit, width = 725)
 st_data_3
 
 
-
+st.markdown("now let's take the height, weight and body mass index data of 500 random people from the US")
 fig, ax = plt.subplots(figsize=(30,40), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=30)
+plt.title('Dependence of GDP on Investment', fontsize=40)
+plt.xticks(fontsize=5)
+plt.yticks(fontsize=30)
+ax.set_xlabel("GDP2015", fontsize=30)
+ax.set_ylabel("Investments2015", fontsize=30)
 st.pyplot(fig)
 
 fig = plt.figure(figsize=(15, 12), dpi= 80)
