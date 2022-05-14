@@ -57,3 +57,9 @@ fig = plt.figure(
     figsize = (20, 15)
 )
 st.pyplot(fig)
+
+plt.figure(figsize=(13,10), dpi= 80)
+sns.boxplot(x='Gender', y='Height', data=df_2, notch=False)
+
+plt.title('Height', fontsize=30)
+st.pyplot(fig)
