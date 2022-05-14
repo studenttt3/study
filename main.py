@@ -82,7 +82,7 @@ folium.Choropleth(
         fill_opacity=0.7,
         nan_fill_opacity = 0,
         line_opacity=0.2,
-        legend_name="map",
+        legend_name="Country Name",
     ).add_to(m)
 folium.LayerControl().add_to(m)
 st_data = st_folium(m, width = 725)
