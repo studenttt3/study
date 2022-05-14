@@ -101,5 +101,5 @@ if(the_most == 'the highest' and gen == 'women'):
 
 world_map = folium.Map()
 w = st_folium(world_map, width=725)
-point = folium.Map(location=[37.296933,-121.9574983], zoom_start = 8, tiles = "Mapbox bright")
+w
 
