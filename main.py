@@ -16,7 +16,7 @@ df_3 = pd.read_csv("mass.csv")
 
 
 country = st.selectbox(
-        "Country Name", df_1["Country Name"].value_counts().index)
+"Select the country for which you want to receive data on height, weight and body mass index", df_1["Country Name"].value_counts().index)
 df_selection = df_1[lambda x: x["Country Name"] == country]
 df_selection
 df_sel = df_3[lambda y: y["Country"] == country]
