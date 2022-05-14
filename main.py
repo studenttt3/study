@@ -71,15 +71,10 @@ gen = st.selectbox(
     ('men','women'))
 
 
-m1 = folium.Map(location=[59.93, 30.33],
-                tiles='openstreetmap', # оно такое по умолчанию
-                zoom_start=13)
-st_data = st_folium(m1, width = 725)
-st_data
-folium.Marker(
-    location=[59.94, 30.35],
-    popup='<i>Здесь был Вася</i>',
-    tooltip='Метка 1').add_to(m2) # попробуйте добавить: icon=folium.Icon(icon="cloud")
-icon=folium.Icon(icon="cloud")
+
+
+world_map = folium.Map()
+w = st_folium(world_map, width=725)
+w
 
 
