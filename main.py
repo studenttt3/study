@@ -76,5 +76,10 @@ m1 = folium.Map(location=[59.93, 30.33],
                 zoom_start=13)
 st_data = st_folium(m1, width = 725)
 st_data
-
+m2 = folium.Map(
+    location=[59.93, 30.33],
+    tiles='openstreetmap',
+    zoom_start=14)
+st1_data = st_folium(m2, width = 725)
+st1_data
 
