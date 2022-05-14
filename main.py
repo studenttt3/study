@@ -63,5 +63,7 @@ df_sel
 the_most = st.selectbox(
     'Choose what you want',
     ('the highest','the lowest'))
-
+gen = st.selectbox(
+    '',
+    ('men','women'))
 
