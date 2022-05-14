@@ -35,7 +35,6 @@ params = {'axes.titlesize': large,
 plt.rcParams.update(params)
 plt.style.use('seaborn-whitegrid')
 sns.set_style("white")
-%matplotlib inline
 
 fig, ax = plt.subplots(figsize=(30,10), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.5)
