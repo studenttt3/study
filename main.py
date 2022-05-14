@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from pywaffle import Waffle
 import folium
 from streamlit_folium import st_folium
+import json
 
 df_1 = pd.read_csv("Height.csv")
 df_1
