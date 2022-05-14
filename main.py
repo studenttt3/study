@@ -54,7 +54,7 @@ fig = plt.figure(
 st.pyplot(fig)
 
 country = st.selectbox(
-        "Country", df_1["Country_name"].value_counts().iloc[:10].index)
+        "Country", df_1["Country name"].value_counts().iloc[:10].index)
 
-df_selection = df_1[lambda x: x["Country_name"] == country]
+df_selection = df_1[lambda x: x["Country name"] == country]
 df_selection
