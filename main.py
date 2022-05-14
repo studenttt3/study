@@ -69,7 +69,11 @@ the_most = st.selectbox(
 gen = st.selectbox(
     '',
     ('men','women'))
-
+if(the_most == 'the highest' and gen == 'men'):
+    fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
+    ax.vlines(x=df_1['Country Name'], ymin =0, ymax =  color='blue', alpha=0.7, linewidth=2)
+    ax.scatter(x=df_1['Country Name'], y=df_1['Male Height in Cm'], s=75, color='blue', alpha=0.7)
+    st.pyplot(fig)
 
 
 
@@ -77,5 +81,3 @@ world_map = folium.Map()
 w = st_folium(world_map, width=725)
 point = folium.Map(location=[37.296933,-121.9574983], zoom_start = 8, tiles = "Mapbox bright")
 
-folium.Marker(location=[37.4074687,-122.086669], popup = "Google HQ", icon=folium.Icon(color = 'gray')).add_to(w)
-w
