@@ -99,6 +99,8 @@ plt.yticks(fontsize=30)
 ax.set_xlabel("Height", fontsize=40)
 ax.set_ylabel("Weight", fontsize=40)
 st.pyplot(fig)
+st.markdown("The only conclusion that can be drawn from this graph is that the people in the sample were chosen randomly.")
+st.markdown("The points are approximately evenly spaced. Only tall, short, slender or fat were not included in the sample")
 
 fig = plt.figure(figsize=(15, 12), dpi= 80)
 sns.boxplot(x='Gender', y='Height', data=df_2, notch=False)
@@ -115,7 +117,6 @@ sns.boxplot(x='Gender', y='Index', data=df_2, notch=False)
 plt.title('Mass index', fontsize=30)
 st.pyplot(fig)
 
-st.header("Distribution of body mass index")
 df_counts = df_2.groupby(['Index']).size().reset_index(name='counts')
 categories = df_counts.shape[0]
 colors = [plt.cm.inferno_r(i/float(categories)) for i in range(categories)]
@@ -132,7 +133,7 @@ fig = plt.figure(
     colors = colors,
     figsize = (20, 15)
 )
-plt.title('Distribution of body mass index', fontsize=30)
+plt.title('Distribution of body mass index', fontsize=40)
 st.pyplot(fig)
 
 
