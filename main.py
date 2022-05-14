@@ -70,8 +70,11 @@ gen = st.selectbox(
     '',
     ('men','women'))
 
+
 m1 = folium.Map(location=[59.93, 30.33],
                 tiles='openstreetmap', # оно такое по умолчанию
                 zoom_start=13)
-m1
+st_data = st_folium(m1, width = 725)
+st_data
+
 
