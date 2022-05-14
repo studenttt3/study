@@ -55,7 +55,7 @@ if(the_most == 'the highest' and gen == 'women'):
     ax.scatter(x=df_11['Country Name'], y=df_11['Female Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
  
-st.header("The country with the largest growth of men and women on the map")    
+st.header("The country with the largest growth of men and women on the map (Netherlands)")    
 loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
@@ -66,7 +66,7 @@ for lat , lon in zip(df.latitude , df.longitude):
 ans = st_folium(mapit, width = 725)
 ans
 
-st.header("The country with the lowest growth of men on the map")    
+st.header("The country with the lowest growth of men on the map (Timor-Lest)")    
 loc = 'Timor-Leste'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
@@ -77,7 +77,7 @@ for lat , lon in zip(df.latitude , df.longitude):
 ans = st_folium(mapit, width = 725)
 ans
 
-st.header("The country with the lowest growth of women on the map")    
+st.header("The country with the lowest growth of women on the map (Guatemala)")    
 loc = 'Guatemala'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
@@ -98,8 +98,8 @@ plt.yticks(fontsize=20)
 ax.set_xlabel("Height", fontsize=40)
 ax.set_ylabel("Weight", fontsize=40)
 st.pyplot(fig)
-st.markdown("The only conclusion that can be drawn from this graph is that the people in the sample were chosen randomly.")
-st.markdown("The points are approximately evenly spaced. Only tall, short, slender or fat were not included in the sample")
+st.markdown("The only conclusion that can be drawn from this graph is that the people in the sample were chosen randomly. The points are approximately evenly spaced. Only tall, short, slender or fat were not included in the sample")
+st.markdown("")
 
 fig = plt.figure(figsize=(15, 12), dpi= 80)
 sns.boxplot(x='Gender', y='Height', data=df_2, notch=False)
