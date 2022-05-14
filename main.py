@@ -31,17 +31,10 @@ sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=30)
 st.pyplot(fig)
 
-
 df_counts = df_2.groupby(['Index']).size().reset_index(name='counts')
-
-fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
-ax.vlines(x=df_counts.Index, ymin=0, ymax=df_counts.counts, color='blue', alpha=0.7, linewidth=2)
-ax.scatter(x=df_counts.Index, y=df_counts.counts, s=75, color='blue', alpha=0.7)
-st.pyplot(fig)
 
 categories = df_counts.shape[0]
 colors = [plt.cm.inferno_r(i/float(categories)) for i in range(categories)]
-
 fig = plt.figure(
     FigureClass = Waffle,
     plots = {
