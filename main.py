@@ -70,7 +70,7 @@ gen = st.selectbox(
     '',
     ('men','women'))
 
-df_1_clean = df_1[lambda x: x is Null == False]
+df_1_clean = df_1[lambda x: x is None == False]
 
 geo = f"countries.geojson"
 m = folium.Map(location = [0,0], zoom_start = 3)
