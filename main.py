@@ -55,6 +55,7 @@ if(the_most == 'the highest' and gen == 'women'):
     ax.scatter(x=df_11['Country Name'], y=df_11['Female Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
  
+###in the process of creating maps this link was used: https://pythonim.ru/libraries/geopandas-v-python .
 st.header("The country with the largest growth of men and women on the map (Netherlands)")    
 loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
@@ -117,6 +118,7 @@ plt.title('Mass index', fontsize=30)
 st.pyplot(fig)
 
 df_counts = df_2.groupby(['Index']).size().reset_index(name='counts')
+###in the process of writing this code was used https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/#35.-Time-Series-Plot .
 categories = df_counts.shape[0]
 colors = [plt.cm.inferno_r(i/float(categories)) for i in range(categories)]
 fig = plt.figure(
