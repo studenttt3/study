@@ -89,7 +89,6 @@ for lat , lon in zip(df.latitude , df.longitude):
 ans = st_folium(mapit, width = 725)
 ans
 
-
 st.markdown("Now let's take the height, weight and body mass index data of 500 random people from the US.")
 fig, ax = plt.subplots(figsize=(30,50), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
@@ -137,5 +136,3 @@ fig = plt.figure(
 plt.title('Distribution of body mass index', fontsize=40)
 st.pyplot(fig)
 st.markdown("We see that the higher the body mass index, the more people who have it. Hence the conclusion that many Americans have a high body mass index, which corresponds to obesity.")
-
-
