@@ -36,3 +36,22 @@ fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
 ax.vlines(x=df_counts.Index, ymin=0, ymax=df_counts.counts, color='blue', alpha=0.7, linewidth=2)
 ax.scatter(x=df_counts.Index, y=df_counts.counts, s=75, color='blue', alpha=0.7)
 st.pyplot(fig)
+
+categories = df_counts.shape[0]
+colors = [plt.cm.inferno_r(i/float(categories)) for i in range(categories)]
+
+fig = plt.figure(
+    FigureClass = Waffle,
+    plots = {
+        '111': {
+            'values': df_counts['counts'],
+            'labels': ["{0}".format(n[0], n[1]) for n in df_counts[['Index', 'counts']].itertuples()],
+            'legend': {'loc': 'upper left', 'bbox_to_anchor': (1.1, 1.2), 'fontsize': 22},
+            'title': {'label': 'Body mass index', 'loc': 'center', 'fontsize':30}
+        },
+    },
+    rows = 10,
+    colors = colors,
+    figsize = (20, 15)
+)
+st.pyplot(fig)
