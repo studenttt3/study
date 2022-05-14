@@ -14,19 +14,20 @@ df_1 = pd.read_csv("Height.csv")
 df_2 = pd.read_csv("500.csv")
 df_3 = pd.read_csv("mass.csv")
 
-
+st.header("Select the country for which you want to receive data on height, weight and body mass index")
 country = st.selectbox(
-"Select the country for which you want to receive data on height, weight and body mass index", df_1["Country Name"].value_counts().index)
+"Country", df_1["Country Name"].value_counts().index)
 df_selection = df_1[lambda x: x["Country Name"] == country]
 df_selection
 df_sel = df_3[lambda y: y["Country"] == country]
 df_sel
 
+st.header("You can see which countries have the highest and lowest heights for men and women")
 the_most = st.selectbox(
-    'Choose what you want',
+    'The highest or the lowest',
     ('the highest','the lowest'))
 gen = st.selectbox(
-    '',
+    'Gender',
     ('men','women'))
 
 if(the_most == 'the lowest' and gen == 'men'):
@@ -64,6 +65,41 @@ for lat , lon in zip(data.latitude , data.longitude):
         folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
 st_data = st_folium(mapit, width = 725)
 st_data
+
+st.header("The country with the lowest growth of men on the map")    
+loc = 'Timor-Leste'
+location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
+point = location.geometry.iloc[0] 
+data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
+for lat , lon in zip(data.latitude , data.longitude): 
+        folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
+st_data = st_folium(mapit, width = 725)
+st_data
+
+st.header("The country with the largest growth of women on the map")    
+loc = 'Netherlands'
+location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
+point = location.geometry.iloc[0] 
+data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
+for lat , lon in zip(data.latitude , data.longitude): 
+        folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
+st_data = st_folium(mapit, width = 725)
+st_data
+
+st.header("The country with the lowest growth of women on the map")    
+loc = 'Guatemala'
+location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
+point = location.geometry.iloc[0] 
+data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
+for lat , lon in zip(data.latitude , data.longitude): 
+        folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
+st_data = st_folium(mapit, width = 725)
+st_data
+
+
 
 fig, ax = plt.subplots(figsize=(30,40), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
