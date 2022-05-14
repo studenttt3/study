@@ -6,6 +6,7 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 from pywaffle import Waffle
 import folium
+from streamlit_folium import st_folium
 
 df_1 = pd.read_csv("Height.csv")
 df_1
@@ -82,5 +83,7 @@ folium.Choropleth(
         line_opacity=0.2,
         legend_name="map",
     ).add_to(m)
-
+folium.LayerControl().add_to(m)
+st_data = st_folium(m, width = 725)
+st_data
 
