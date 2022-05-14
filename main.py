@@ -49,7 +49,7 @@ fig = plt.figure(
             'values': df_counts['counts'],
             'labels': ["{0}".format(n[0], n[1]) for n in df_counts[['Index', 'counts']].itertuples()],
             'legend': {'loc': 'upper left', 'bbox_to_anchor': (1.1, 1.2), 'fontsize': 22},
-            'title': {'label': 'Body mass index', 'loc': 'center', 'fontsize':30}
+            'title': {'label': 'Distribution of body mass index', 'loc': 'center', 'fontsize':30}
         },
     },
     rows = 10,
