@@ -59,3 +59,12 @@ df_selection = df_1[lambda x: x["Country Name"] == country]
 df_selection
 df_sel = df_3[lambda y: y["Country"] == country]
 df_sel
+
+the_most = st.selectbox(
+    'Choose what you want',
+    ('the highest','the lowest'))
+
+fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
+ax.vlines(x=df_1.(Country Name), ymin=0, color='blue', alpha=0.7, linewidth=2)
+ax.scatter(x=df_1.(Country Name, y=df_1.(Male Height in Cm), s=75, color='blue', alpha=0.7)
+st.pyplot(fig)
