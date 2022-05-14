@@ -111,8 +111,8 @@ sns.boxplot(x='Gender', y='Index', data=df_2, notch=False)
 plt.title('Mass index', fontsize=30)
 st.pyplot(fig)
 
+st.header("Distribution of body mass index")
 df_counts = df_2.groupby(['Index']).size().reset_index(name='counts')
-
 categories = df_counts.shape[0]
 colors = [plt.cm.inferno_r(i/float(categories)) for i in range(categories)]
 fig = plt.figure(
@@ -122,7 +122,6 @@ fig = plt.figure(
             'values': df_counts['counts'],
             'labels': ["{0}".format(n[0], n[1]) for n in df_counts[['Index', 'counts']].itertuples()],
             'legend': {'loc': 'upper left', 'bbox_to_anchor': (1.1, 1.2), 'fontsize': 22},
-            'title': {'label': 'Distribution of body mass index', 'loc': 'center', 'fontsize':30}
         },
     },
     rows = 10,
