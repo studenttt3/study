@@ -4,6 +4,7 @@ import seaborn as sns
 import streamlit as st
 import geopandas as gpd
 import matplotlib.pyplot as plt
+from pywaffle import Waffle
 
 df_1 = pd.read_csv("Height.csv")
 df_1
