@@ -53,8 +53,8 @@ fig = plt.figure(
 )
 st.pyplot(fig)
 
-Country name = st.selectbox(
-        "Country name", df_1["Country name"].value_counts().iloc[:10].index)
+country = st.selectbox(
+        "country", df_1["Country name"].value_counts().iloc[:10].index)
 
-df_selection = df_1[lambda x: x["Country name"] == Country name]
+df_selection = df_1[lambda x: x["Country name"] == country]
 df_selection
