@@ -70,23 +70,8 @@ gen = st.selectbox(
     '',
     ('men','women'))
 
-df_1_clean = df_1[lambda x: x is None == False]
-
-geo = f"countries.geojson"
-m = folium.Map(location = [0,0], zoom_start = 3)
-folium.Choropleth(
-        geo_data=geo,
-        name="choropleth",
-        data=df_1_clean,
-        columns=["Male Height in Cm", "Country Name"],
-        key_on="ADMIN",
-        fill_color="YlGn",
-        fill_opacity=0.7,
-        nan_fill_opacity = 0,
-        line_opacity=0.2,
-        legend_name="Country Name",
-    ).add_to(m)
-folium.LayerControl().add_to(m)
-st_data = st_folium(m, width = 725)
-st_data
+m1 = folium.Map(location=[59.93, 30.33],
+                tiles='openstreetmap', # оно такое по умолчанию
+                zoom_start=13)
+m1
 
