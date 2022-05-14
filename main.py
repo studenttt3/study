@@ -134,6 +134,6 @@ fig = plt.figure(
 )
 plt.title('Distribution of body mass index', fontsize=40)
 st.pyplot(fig)
-st.markdon("We see that the higher the body mass index, the more people who have it. Hence the conclusion that many Americans have a high body mass index, which corresponds to obesity.")
+st.markdown("We see that the higher the body mass index, the more people who have it. Hence the conclusion that many Americans have a high body mass index, which corresponds to obesity.")
 
 
