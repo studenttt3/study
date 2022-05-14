@@ -99,7 +99,24 @@ if(the_most == 'the highest' and gen == 'women'):
 
 
 
-world_map = folium.Map()
-w = st_folium(world_map, width=725)
-w
+
+
+m = folium.Map(location=[63.391522, 96.328125], zoom_start=3)
+
+
+st_data = st_folium(m, width = 725)
+st_data
+
+loc = 'Netherland'
+location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
+point = location.geometry.iloc[0] 
+
+data= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
+
+mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
+for lat , lon in zip(data.latitude , data.longitude): 
+        folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
+st_data = st_folium(mapit, width = 725)
+st_data
+
 
