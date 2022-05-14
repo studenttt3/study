@@ -75,9 +75,7 @@ gen = st.selectbox(
 
 world_map = folium.Map()
 w = st_folium(world_map, width=725)
-w
-folium.Marker(
-    location=[59.94, 30.35],
-    popup='<i>Здесь был Вася</i>',
-    tooltip='Метка 1').add_to(m2)
+point = folium.Map(location=[37.296933,-121.9574983], zoom_start = 8, tiles = "Mapbox bright")
 
+folium.Marker(location=[37.4074687,-122.086669], popup = "Google HQ", icon=folium.Icon(color = 'gray')).add_to(w)
+w
