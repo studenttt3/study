@@ -97,7 +97,7 @@ if(the_most == 'the highest' and gen == 'women'):
     st.pyplot(fig)
  
     
-loc = 'Russia'
+loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
 
