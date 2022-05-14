@@ -68,7 +68,7 @@ gen = st.selectbox(
     '',
     ('men','women'))
 
-    geo = f"countries.geojson"
+geo = f"countries.geojson"
 m = folium.Map(location = [0,0], zoom_start = 3)
 folium.Choropleth(
         geo_data=geo,
