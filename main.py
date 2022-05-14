@@ -96,7 +96,7 @@ if(the_most == 'the highest' and gen == 'women'):
     ax.scatter(x=df_11['Country Name'], y=df_11['Female Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
  
-st.header("MAPAPAP")    
+st.header("The country with the largest growth of men on the map")    
 loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
