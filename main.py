@@ -11,18 +11,15 @@ import json
 from geopandas.tools import geocode
 
 df_1 = pd.read_csv("Height.csv")
-df_1
 df_2 = pd.read_csv("500.csv")
-df_2
 df_3 = pd.read_csv("mass.csv")
-df_3
 
 fig, ax = plt.subplots(figsize=(30,40), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=30)
 st.pyplot(fig)
 
-fig = plt.figure(figsize=(13,10), dpi= 80)
+fig = plt.figure(figsize=(16,8), dpi= 80)
 sns.boxplot(x='Gender', y='Height', data=df_2, notch=False)
 plt.title('Height', fontsize=30)
 st.pyplot(fig)
