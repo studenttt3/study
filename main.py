@@ -72,10 +72,9 @@ gen = st.selectbox(
 
 if(the_most == 'the highest' and gen == 'men'):
     df_11 = df_1.sort_values('Male Height in Cm', inplace=True)
-    fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
-    ax.vlines(x=df_11['Country Name'], ymin =0, ymax=200, color='blue', alpha=0.7, linewidth=2)
-    ax.scatter(x=df_11['Country Name'], y=df_11['Male Height in Cm'].iloc, s=75, color='blue', alpha=0.7)
-    st.pyplot(fig)
+    df_11
+ 
+    
 
 
 
