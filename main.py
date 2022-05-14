@@ -5,6 +5,7 @@ import streamlit as st
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from pywaffle import Waffle
+import geoplot as gplt
 
 df_1 = pd.read_csv("Height.csv")
 df_1
@@ -68,6 +69,21 @@ gen = st.selectbox(
     ('men','women'))
 if(the_most == 'the highest' and gen == 'men'):
     fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
-    ax.vlines(x=df_1['Country Name'], ymin =0, color='blue', alpha=0.7, linewidth=2)
+    ax.vlines(x=df_1['Country Name'], ymin =0, ymax =  color='blue', alpha=0.7, linewidth=2)
     ax.scatter(x=df_1['Country Name'], y=df_1['Male Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
+    
+
+
+# Load the json file with county coordinates
+geoData = gpd.read_file('https://raw.githubusercontent.com/holtzy/The-Python-Graph-Gallery/master/static/data/US-counties.geojson')
+
+# Make sure the "id" column is an integer
+geoData.id = geoData.id.astype(str).astype(int)
+
+# Remove Alaska, Hawaii and Puerto Rico.
+stateToRemove = ['02', '15', '72']
+geoData = geoData[~geoData.STATE.isin(stateToRemove)]
+
+# Basic plot with just county outlines
+gplt.polyplot(geoData, figsize=(20, 4));
