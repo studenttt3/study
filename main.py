@@ -70,11 +70,29 @@ gen = st.selectbox(
     '',
     ('men','women'))
 
-if(the_most == 'the highest' and gen == 'men'):
+if(the_most == 'the lowest' and gen == 'men'):
     df_11 = df_1.sort_values(by =['Male Height in Cm'])[:10]
     fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
     ax.vlines(x=df_11['Country Name'], ymin = 150, ymax=170, color='blue', alpha=0.7, linewidth=2)
     ax.scatter(x=df_11['Country Name'], y=df_11['Male Height in Cm'], s=75, color='blue', alpha=0.7)
+    st.pyplot(fig)
+if(the_most == 'the highest' and gen == 'men'):
+    df_11 = df_1.sort_values(by =['Male Height in Cm'], reverse = True)[:10]
+    fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
+    ax.vlines(x=df_11['Country Name'], ymin = 150, ymax=170, color='blue', alpha=0.7, linewidth=2)
+    ax.scatter(x=df_11['Country Name'], y=df_11['Male Height in Cm'], s=75, color='blue', alpha=0.7)
+    st.pyplot(fig)
+if(the_most == 'the lowest' and gen == 'women'):
+    df_11 = df_1.sort_values(by =['Female Height in Cm'])[:10]
+    fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
+    ax.vlines(x=df_11['Country Name'], ymin = 150, ymax=170, color='blue', alpha=0.7, linewidth=2)
+    ax.scatter(x=df_11['Country Name'], y=df_11['Female Height in Cm'], s=75, color='blue', alpha=0.7)
+    st.pyplot(fig)
+if(the_most == 'the highest' and gen == 'women'):
+    df_11 = df_1.sort_values(by =['Female Height in Cm'], reverse = True)[:10]
+    fig, ax = plt.subplots(figsize=(16,10), dpi= 80)
+    ax.vlines(x=df_11['Country Name'], ymin = 160, ymax=180, color='blue', alpha=0.7, linewidth=2)
+    ax.scatter(x=df_11['Country Name'], y=df_11['Female Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
  
     
