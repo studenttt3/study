@@ -90,7 +90,7 @@ st_data_3 = st_folium(mapit, width = 725)
 st_data_3
 
 
-st.markdown("now let's take the height, weight and body mass index data of 500 random people from the US")
+st.markdown("Now let's take the height, weight and body mass index data of 500 random people from the US")
 fig, ax = plt.subplots(figsize=(30,40), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=50)
