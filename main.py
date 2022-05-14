@@ -27,7 +27,7 @@ plt.style.use('seaborn-whitegrid')
 sns.set_style("white")
 
 fig, ax = plt.subplots(figsize=(30,40), dpi= 80)
-sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.5, orient='h')
+sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7, orient='h')
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=30)
 st.pyplot(fig)
 
