@@ -76,14 +76,10 @@ if(the_most == 'the highest' and gen == 'men'):
 
 
 # Load the json file with county coordinates
-geoData = gpd.read_file('https://raw.githubusercontent.com/holtzy/The-Python-Graph-Gallery/master/static/data/US-counties.geojson')
+geoData = gpd.read_file('countries.geojson')
 
 # Make sure the "id" column is an integer
 geoData.id = geoData.id.astype(str).astype(int)
-
-# Remove Alaska, Hawaii and Puerto Rico.
-stateToRemove = ['02', '15', '72']
-geoData = geoData[~geoData.STATE.isin(stateToRemove)]
 
 # Basic plot with just county outlines
 gplt.polyplot(geoData, figsize=(20, 4));
