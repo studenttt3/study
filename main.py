@@ -27,4 +27,4 @@ sns.set_style("white")
 
 fig, ax = plt.subplots(figsize=(30,10), dpi= 80)
 sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.5)
-plt.show()
+st.pyplot(fig)
