@@ -31,6 +31,21 @@ sns.stripplot(df_2.Height, df_2.Weight, jitter=0.25, size=8, ax=ax, linewidth=.7
 plt.title('Height and weight of people from a sample size of 500 people', fontsize=30)
 st.pyplot(fig)
 
+fig = plt.figure(figsize=(13,10), dpi= 80)
+sns.boxplot(x='Gender', y='Height', data=df_2, notch=False)
+plt.title('Height', fontsize=30)
+st.pyplot(fig)
+
+fig = plt.figure(figsize=(13,10), dpi= 80)
+sns.boxplot(x='Gender', y='Weight', data=df_2, notch=False)
+plt.title('Weight', fontsize=30)
+st.pyplot(fig)
+
+fig = plt.figure(figsize=(13,10), dpi= 80)
+sns.boxplot(x='Gender', y='Index', data=df_2, notch=False)
+plt.title('Mass index', fontsize=30)
+st.pyplot(fig)
+
 df_counts = df_2.groupby(['Index']).size().reset_index(name='counts')
 
 categories = df_counts.shape[0]
@@ -49,19 +64,4 @@ fig = plt.figure(
     colors = colors,
     figsize = (20, 15)
 )
-st.pyplot(fig)
-
-fig = plt.figure(figsize=(13,10), dpi= 80)
-sns.boxplot(x='Gender', y='Height', data=df_2, notch=False)
-plt.title('Height', fontsize=30)
-st.pyplot(fig)
-
-fig = plt.figure(figsize=(13,10), dpi= 80)
-sns.boxplot(x='Gender', y='Weight', data=df_2, notch=False)
-plt.title('Weight', fontsize=30)
-st.pyplot(fig)
-
-fig = plt.figure(figsize=(13,10), dpi= 80)
-sns.boxplot(x='Gender', y='Index', data=df_2, notch=False)
-plt.title('Mass index', fontsize=30)
 st.pyplot(fig)
