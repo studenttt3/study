@@ -69,18 +69,4 @@ gen = st.selectbox(
     ('men','women'))
 
     
-geo = f"countries.geojson"
-m = folium.Map(location = [0,0], zoom_start = 3)
-folium.Choropleth(
-        geo_data=geo,
-        name="choropleth",
-        data=df_lands_selection,
-        columns=["Male Height in Cm", "Country Name"],
-        key_on="feature.properties.WB_A2",
-        fill_color="YlGn",
-        fill_opacity=0.7,
-        nan_fill_opacity = 0,
-        line_opacity=0.2,
-        legend_name="map",
-    ).add_to(m)
 
