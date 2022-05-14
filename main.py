@@ -55,7 +55,7 @@ if(the_most == 'the highest' and gen == 'women'):
     ax.scatter(x=df_11['Country Name'], y=df_11['Female Height in Cm'], s=75, color='blue', alpha=0.7)
     st.pyplot(fig)
  
-st.header("The country with the largest growth of men on the map")    
+st.header("The country with the largest growth of men and women on the map")    
 loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
@@ -68,17 +68,6 @@ ans
 
 st.header("The country with the lowest growth of men on the map")    
 loc = 'Timor-Leste'
-location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
-point = location.geometry.iloc[0] 
-df= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
-mapit = folium.Map( location=[0, 0], zoom_start=1 ) 
-for lat , lon in zip(df.latitude , df.longitude): 
-        folium.Marker( location=[ lat,lon ], fill_color='#43d9de', radius=8 ).add_to( mapit ) 
-ans = st_folium(mapit, width = 725)
-ans
-
-st.header("The country with the largest growth of women on the map")    
-loc = 'Netherlands'
 location = geocode(loc, provider="nominatim" , user_agent = 'my_request')
 point = location.geometry.iloc[0] 
 df= pd.DataFrame({"longitude":[point.x], "latitude":[point.y]})
